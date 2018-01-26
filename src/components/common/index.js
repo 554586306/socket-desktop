@@ -11,7 +11,7 @@ const install = function(Vue, opts = {}){
         Vue.component(key, myView[key]);
     });
 
-    Vue.prototype.$Floder = Floder;
+    Vue.prototype.$floder = Floder;
 }
 
 // auto install
@@ -20,8 +20,10 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 const API = {
-	version:1.0,
-	install
+	version:'1.0',
+	install,
+	...myView
 }
 
-module.exports = API;   // eslint-disable-line no-undef
+export default API;
+//module.exports.default = module.exports = API;	// eslint-disable-line no-undef

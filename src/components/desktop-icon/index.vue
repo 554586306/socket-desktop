@@ -1,7 +1,8 @@
 <template>
   <div class="container">
-  	<div class="icon" v-for="(item,index) in app" :style="{background:item.color}" @dblclick="openApp(item)">
-  		{{item.name}}
+  	<div class="content" v-for="(item,index) in app" @dblclick="openApp(item)">
+  		<Icon class="icon" :type="item.icon"></Icon>
+  		<div class="title">{{item.name}}</div>
   	</div>
   </div>
 </template>
@@ -31,17 +32,27 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" rel="stylesheet/less" scoped>
+	@icon-size: 50px;
 	@app-width: 80px;
 	.container{
-    height: 100%;
-    width: 100%;
+    /*height: 100%;
+    width: 100%;*/
     position: fixed;
-    .icon{
-    	line-height: @app-width;
-    	width: @app-width;
-    	height: @app-width;
-    	margin: 20px;
+    .content{
+    	margin: 5px;
     	user-select: none;
+	    .icon{
+	    	line-height: @app-width;
+	    	width: @app-width;
+	    	height: @app-width;
+				font-size: @icon-size;
+				color: #fff;
+	    }
+	    .title{
+	    	color: #fff;
+	    	text-shadow: 0px 3px 3px #000;
+	    	-webkit-text-stroke: 0.1px #000;
+	    }
     }
 	}
 </style>
