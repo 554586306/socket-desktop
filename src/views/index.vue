@@ -23,6 +23,9 @@ export default {
   	isOpen(data){
   		this.item = data;
   	}
+  },
+  created(){
+  	console.log(this.$store)
   }
 }
 </script>

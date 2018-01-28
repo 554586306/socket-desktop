@@ -26,6 +26,7 @@ export default {
   	}
   },
   created(){
+  	console.log(this)
   }
 }
 </script>
@@ -39,7 +40,7 @@ export default {
     width: 100%;*/
     position: fixed;
     .content{
-    	margin: 5px;
+    	padding: 5px;
     	user-select: none;
 	    .icon{
 	    	line-height: @app-width;
