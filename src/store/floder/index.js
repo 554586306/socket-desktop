@@ -7,7 +7,7 @@ const FLODER_STATE_SUBTRACT = 'FLODER_STATE_SUBTRACT'   // -删除
 
 const FLODER_ACTIVE = 'FLODER_ACTIVE'   // 当前激活的文件夹
 const FLODER_ACTIVE_FUN = 'FLODER_ACTIVE_FUN'
-const FLODER_ACTIVE_WATCH = 'FLODER_ACTIVE_WATCH'  // 监听激活的文件夹的变化
+const FLODER_ACTIVE_BEFORE = 'FLODER_ACTIVE_BEFORE'  // 不激活这个文件夹
 
 export default {
 	namespaced: true,
@@ -34,6 +34,11 @@ export default {
 		state.FLODER_ACTIVE.splice(state.FLODER_ACTIVE.findIndex(item=>item==obj),1);  //找到下标，删除
 		state.FLODER_ACTIVE.push(obj);   // 把激活的文件夹放到数组的最后一位
 		
+    },
+    [FLODER_ACTIVE_BEFORE](state,obj){
+    state.FLODER_ACTIVE.splice(state.FLODER_ACTIVE.findIndex(item=>item==obj),1);  //找到下标，删除
+    state.FLODER_ACTIVE.unshift(obj);   // 把激活的文件夹放到数组的最前面
+    
     }
   }
   //计算属性getters，在多个组件内可以复用，返回计算后的结果。
