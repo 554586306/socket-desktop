@@ -183,6 +183,7 @@ export default {
 	@base-height: 25px;  /*文件夹上下*/
 	@floder-width: 60%;
 	.layout1{
+		user-select: none;
 	    border: 1px solid #d7dde4;
 	    border-radius: 4px;
 	    overflow: hidden;
@@ -190,7 +191,7 @@ export default {
 		align-items:center;
 		justify-content:center;
 	    height: 400px;
-	    width: 600px;
+	    width: 600px;	
 	    left: 200px;
 	    top: 100px;*/
 	    position: absolute;
